@@ -22,7 +22,7 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-export PS1='\[\033[0;35m\]\u\[\033[0;33m\]@\[\033[0;35m\]\h\[\033[0;33m\] \w\[\033[00m\] `if [ -d .git ]; then git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /; fi`\[\033[37m\]$\[\033[00m\]: '
+export PS1='\[\033[0;35m\]\u\[\033[0;33m\]@\[\033[0;35m\]\h\[\033[0;33m\] \w\[\033[00m\] `git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[37m\]$\[\033[00m\]: '
 
 # User specific environment and startup programs
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin
