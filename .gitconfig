@@ -3,6 +3,7 @@
 	email = jeremyh@cetoncorp.com
 [diff]
 	color = auto
+	algorithm = patience
 [status]
 	color = auto
 [pager]
