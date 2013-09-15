@@ -2,6 +2,7 @@
 cd
 rm -rf .vim .gitconfig .vimrc .bash_profile .gvimrc .profile
 ln -s dotfiles/.vim
+ln -s dotfiles/.subversion
 ln -s .vim/.vimrc
 ln -s .vim/.gvimrc
 ln -s dotfiles/.gitconfig
