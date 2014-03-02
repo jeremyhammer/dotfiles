@@ -46,3 +46,5 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$PATH:$HOME/dev/adt/sdk/tools:$HOME/dev/adt/sdk/platform-tools:$HOME/dev/android-ndk-r8e
 
 export PATH=$PATH:/usr/local/bin
+
+export PATH=$PATH:$HOME/dev/gcc-arm-none-eabi/bin
