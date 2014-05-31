@@ -48,3 +48,7 @@ export PATH=$PATH:$HOME/dev/adt/sdk/tools:$HOME/dev/adt/sdk/platform-tools:$HOME
 export PATH=$PATH:/usr/local/bin
 
 export PATH=$PATH:$HOME/dev/gcc-arm-none-eabi/bin
+
+zopa() {
+    ssh -p2222 -i ~/.ssh/zopa_id_rsa -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null root@$1
+}
