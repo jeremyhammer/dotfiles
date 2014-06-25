@@ -17,7 +17,7 @@ alias grep="grep --color=auto --exclude-dir=\.svn --exclude-dir=\.git"
 alias git-top='cd "$(git rev-parse --show-toplevel)"'
 alias git-root='f() { local dir=$PWD; while : ; do git rev-parse --is-inside-work-tree &> /dev/null || break; cd "$(git rev-parse --show-toplevel)"; local dir=$PWD; cd ..; done; cd "$dir"; }; f'
 
-alias git-substatus='git status | grep -e "modified content[,)]" -e "untracked content[,)]" | awk "{print \$2}" | xargs -Ipath bash -c "echo path; git -C path status -s"'
+alias git-substatus='git status | grep -e "modified content[,)]" -e "untracked content[,)]" | awk "{print \$3}" | xargs -Ipath bash -c "echo path; git -C path status -s"'
 
 export CLICOLOR=1
 export EDITOR='vim'
