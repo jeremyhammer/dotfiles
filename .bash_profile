@@ -22,10 +22,6 @@ alias git-substatus='git status | grep -e "modified content[,)]" -e "untracked c
 export CLICOLOR=1
 export EDITOR='vim'
 
-export HISTSIZE=10000
-export HISTFILESIZE=10000
-shopt -s histappend
-
 SED_VERSION=`sed --version 2>&1 | head -1 | cut -f4 -d' '`
 if [ "$SED_VERSION" != "4.1.5" ]; then
     export PS1='\[\033[0;35m\]\u\[\033[0;33m\]@\[\033[0;35m\]\h\[\033[0;33m\] \w\[\033[00m\] `git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`\[\033[37m\]$\[\033[00m\]: '
@@ -49,3 +45,22 @@ zopa() {
 }
 
 export ANDROID_SDK_ROOT=/home/jeremyh/Android/Sdk
+
+
+
+
+
+# Eternal bash history.
+# ---------------------
+# Undocumented feature which sets the size to "unlimited".
+# http://stackoverflow.com/questions/9457233/unlimited-bash-history
+export HISTFILESIZE=
+export HISTSIZE=
+export HISTTIMEFORMAT="[%F %T] "
+# Change the file location because certain bash sessions truncate .bash_history file upon close.
+# http://superuser.com/questions/575479/bash-history-truncated-to-500-lines-on-each-login
+export HISTFILE=~/.bash_eternal_history
+# Force prompt to write history after every command.
+# http://superuser.com/questions/20900/bash-history-loss
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
